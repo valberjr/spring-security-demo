@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-import static com.example.demo.security.ApplicationUserRole.ADMIN;
-import static com.example.demo.security.ApplicationUserRole.STUDENT;
+import static com.example.demo.security.ApplicationUserRole.*;
 
 @Repository("fake")
 public class FakeApplicationUserDaoService implements ApplicationUserDao {
@@ -52,7 +51,7 @@ public class FakeApplicationUserDaoService implements ApplicationUserDao {
                 new ApplicationUser(
                         "tom",
                         passwordEncoder.encode("password"),
-                        STUDENT.getGrantedAuthorities(),
+                        ADMIN_TRAINEE.getGrantedAuthorities(),
                         true,
                         true,
                         true,
